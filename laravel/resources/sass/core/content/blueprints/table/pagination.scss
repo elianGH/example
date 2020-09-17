@@ -1,0 +1,44 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    font-size: 14px;
+    padding: 0 26px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+    .pagination__rows-per-page {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+
+        .pagination__rows-text {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .mdc-select {
+            width: 70px;
+            background-color: transparent!important;
+
+            .mdc-select__selected-text {
+                font-size: 14px;
+                padding-top: 15px;
+                border-bottom: none;
+            }
+        }
+    }
+
+    .pagination__rows-count {
+
+    }
+
+    .pagination__navigation {
+
+        .pagination__navigation-link {
+            color: #777;
+            text-decoration: none;
+            display: inline-block;
+        }
+    }
+}

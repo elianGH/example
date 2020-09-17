@@ -1,0 +1,32 @@
+//@import '~@material/drawer/mdc-drawer';
+//@import "~@material/top-app-bar/mdc-top-app-bar";
+//@import "~@material/list/mdc-list";
+//@import "~@material/button/mdc-button";
+//@import "~@material/icon-button/mdc-icon-button";
+//@import "~@material/ripple/mdc-ripple";
+//@import "~@material/checkbox/mdc-checkbox";
+//@import "~@material/data-table/mdc-data-table";
+//@import "~@material/select/mdc-select";
+//@import "~@material/menu-surface/mdc-menu-surface";
+//@import "~@material/menu/mdc-menu";
+//@import "~@material/fab/mdc-fab";
+//@import "~@material/tab-bar/mdc-tab-bar";
+//@import "~@material/tab-scroller/mdc-tab-scroller";
+//@import "~@material/tab-indicator/mdc-tab-indicator";
+//@import "~@material/tab/mdc-tab";
+//@import "~@material/textfield/mdc-text-field";
+//@import "~@material/typography/mdc-typography";
+//@import "~@material/dialog/mdc-dialog";
+
+//:root {
+//    --mdc-theme-primary: $red-50;
+//    --mdc-theme-secondary: #feeae6;
+//}
+
+@import "~@material/theme/mdc-theme";
+@import "~bootstrap/scss/bootstrap-grid";
+@import '~tippy.js/dist/tippy.css';
+//
+
+@import "fonts";
+@import "core/import";

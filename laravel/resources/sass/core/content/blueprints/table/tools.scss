@@ -1,0 +1,11 @@
+.mdc-data-table--tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 14px 0;
+    margin-bottom: 10px;
+
+    .mdc-fab {
+        background-color: $mdc-theme-primary;
+    }
+}

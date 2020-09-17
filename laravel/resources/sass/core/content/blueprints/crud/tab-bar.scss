@@ -1,0 +1,10 @@
+.tab-bar-content {
+    display: none;
+    padding: 20px;
+    height: calc(100% - 48px);
+    overflow-x: auto;
+}
+
+.tab-bar-content--active {
+    display: block;
+}

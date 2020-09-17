@@ -1,0 +1,30 @@
+$dialogItemBg: #039be5;
+$dialogItemBgHover: #0288d1;
+
+.training-in-dialog {
+
+    .training-in-dialog__empty {
+        padding: 30px 0;
+    }
+
+    .training-in-dialog__list {
+
+        .training-in-dialog__item {
+            font-size: 14px;
+            background-color: $dialogItemBg;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $dialogItemBgHover;
+            }
+        }
+    }
+}
+
+.training-in-dialog--button {
+    margin-top: 15px;
+}

@@ -1,0 +1,12 @@
+.mdc-dialog--fullwidth {
+
+    .mdc-dialog__container {
+        width: 100%;
+    }
+
+    .mdc-dialog__surface {
+        max-width: calc(100% - 32px)!important;
+        width: calc(100% - 32px)!important;
+        height: calc(100% - 32px)!important;
+    }
+}

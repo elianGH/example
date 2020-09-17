@@ -1,0 +1,18 @@
+.workout-calendar {
+    margin-left: #{$asideLeftWidth};
+    width: calc(100% - #{$asideLeftWidth});
+    position: relative;
+    height: 100vh;
+
+    .workout-calendar__content {
+        position: relative;
+        height: calc(100% - #{$headerHeight});
+        overflow: auto;
+        padding: 20px;
+    }
+
+    .workout-calendar__header {
+        height: $headerHeight;
+        background: $mdc-theme-primary;
+    }
+}

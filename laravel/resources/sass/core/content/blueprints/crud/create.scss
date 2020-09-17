@@ -1,0 +1,23 @@
+.crud {
+    height: calc(100% - 80px);
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .crud__form {
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: 5px;
+        height: calc(100% - 80px);
+
+        .crud__form-row {
+            margin-bottom: 25px;
+        }
+
+        .crud__form-field--fullwidth {
+            width: 100%;
+        }
+    }
+
+    .crud__tools {
+        margin-bottom: 30px;
+    }
+}

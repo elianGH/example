@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "preserve"
+    },
+    "include": [
+        "resources/js/**/*"
+    ],
+    "exclude": [
+        "node_modules/*"
+    ]
+}

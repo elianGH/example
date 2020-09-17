@@ -1,0 +1,28 @@
+.breadcrumbs {
+
+    .breadcrumbs__icon {
+        font-size: 30px;
+        margin-top: 3px;
+    }
+
+    .breadcrumbs__list {
+        margin: 0 0 0 7px;
+        padding: 0;
+        list-style: none;
+
+        .breadcrumbs__list-item {
+            display: inline-block;
+            margin-right: 3px;
+            font-size: 14px;
+
+            .breadcrumbs__list-route {
+                color: $mdc-theme-primary;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.dialog-form {
+    width: 100%;
+
+    .dialog-form__row {
+        margin-bottom: 15px;
+
+        .dialog-form__field--fullwidth {
+            width: 100%;
+        }
+    }
+
+    .dialog-form__submit {
+        margin-top: 25px;
+    }
+}
+
+.dialog-form.df-400 {
+    width: 400px;
+}
+
+.dialog-form.df-500 {
+    width: 500px;
+}
+
+.dialog-form.df-600 {
+    width: 600px;
+}
+
+.dialog-form.df-700 {
+    width: 700px;
+}
+
+.dialog-form.df-800 {
+    width: 800px;
+}
+
+.dialog-form.df-900 {
+    width: 900px;
+}

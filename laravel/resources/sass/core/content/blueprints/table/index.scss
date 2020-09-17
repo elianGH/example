@@ -1,0 +1,91 @@
+.mdc-data-table {
+    overflow: hidden;
+    height: calc(100% - 175px);
+
+    .mdc-data-table__table {
+        display: block;
+        position: relative;
+        height: calc(100% - 56.58px);
+        overflow: hidden;
+
+        .mdc-data-table__header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: block;
+
+            .mdc-data-table__header-row {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .mdc-data-table__header-cell {
+                    display: inline-flex;
+                    width: 150px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: 56px;
+                    align-items: center;
+                }
+
+                th.mdc-data-table__header-cell--checkbox {
+                    width: 56px!important;
+                }
+
+                th.mdc-data-table__header-cell--actions {
+                    width: 150px!important;
+                    justify-content: flex-end;
+                }
+            }
+
+            @include table-header-cols(
+                    $checkbox_size,
+                    $cols_available,
+                    $col_tools_size
+            );
+        }
+
+        .mdc-data-table__content {
+            overflow: auto;
+            display: block;
+            height: calc(100% - 56.58px);
+            margin-top: 56px;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+            .mdc-data-table__row {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .mdc-data-table__cell {
+                    display: inline-flex;
+                    align-items: center;
+                    overflow: hidden;
+                }
+
+                td.mdc-data-table__cell--checkbox {
+                    width: 56px!important;
+                }
+
+                td.mdc-data-table__cell--actions {
+                    width: 150px!important;
+                    justify-content: flex-end;
+                }
+
+                &:first-child {
+                    border-top: none;
+                }
+            }
+
+            @include table-body-cols(
+                    $checkbox_size,
+                    $cols_available,
+                    $col_tools_size
+            );
+        }
+    }
+}
+
+.mdc-data-table--fullwidth {
+    width: 100%;
+}

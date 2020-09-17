@@ -1,0 +1,39 @@
+@mixin table-header-cols($checkbox_size, $columns, $col_tools_size) {
+
+    @each $column in $columns {
+        $checkbox_part: $checkbox_size / $column;
+        $actions_part: $col_tools_size / $column;
+
+        .mdc-data-table__header-col-#{$column} {
+            .mdc-data-table__header-cell {
+                width: calc(100% / #{$column} - #{$checkbox_part});
+            }
+        }
+
+        .mdc-data-table__header--has-actions.mdc-data-table__header-col-#{$column} {
+            .mdc-data-table__header-cell {
+                width: calc(100% / #{$column} - #{$checkbox_part} - #{$actions_part});
+            }
+        }
+    }
+}
+
+@mixin table-body-cols($checkbox_size, $columns, $col_tools_size) {
+
+    @each $column in $columns {
+        $checkbox_part: $checkbox_size / $column;
+        $actions_part:  $col_tools_size / $column;
+
+        .mdc-data-table__row-col-#{$column} {
+            .mdc-data-table__cell {
+                width: calc(100% / #{$column} - #{$checkbox_part});
+            }
+        }
+
+        .mdc-data-table__row--has-actions.mdc-data-table__row-col-#{$column} {
+            .mdc-data-table__cell {
+                width: calc(100% / #{$column} - #{$checkbox_part} - #{$actions_part});
+            }
+        }
+    }
+}
