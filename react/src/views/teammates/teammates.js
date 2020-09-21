@@ -6,6 +6,7 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext"
 import Link from '@material-ui/core/Link';
 import { NavLink } from "react-router-dom";
 import { TableSkeleton, TitleSkeleton } from "../../components/loaders/skeletons";
+import { columns } from "../../containers/users/teammates/config/columns";
 
 const Teammates = (props) => {
 
@@ -16,29 +17,6 @@ const Teammates = (props) => {
     useEffect(() => {
         fetchTeammates(page, perPage);
     }, [page, perPage]);
-
-    const columns = [
-        {
-            id: "id",
-            label: "ID",
-            align: "left"
-        },
-        {
-            id: "name",
-            label: "Name",
-            align: 'left',
-        },
-        {
-            id: "email",
-            label: "Email",
-            align: "left",
-        },
-        {
-            id: "phone",
-            label: "Phone",
-            align: "left",
-        }
-    ];
 
     if(loading) {
         return (

@@ -19,7 +19,7 @@ class HttpService
             headers: headers
         })
             .then(response => this.response(response))
-            .catch(error => this.response(error));
+            .catch(error => this.response(error.response()));
     }
 
     get(url, parameters = {}, headers = {}) {
@@ -34,7 +34,7 @@ class HttpService
         return {
             ...data,
             status,
-            failure: status >= 300,
+            failure: status > 300,
             headers,
         };
     }

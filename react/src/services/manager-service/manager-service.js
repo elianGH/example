@@ -1,16 +1,22 @@
-import {
-    Client,
-    Team,
-} from './entities';
+import HttpService from "../http-service";
 
 class ManagerService
 {
-    clients() {
-        return Client;
+    http(httpMethod) {
+        this.httpMethod = httpMethod;
+        this.http = new HttpService();
+
+        return this;
     }
 
-    team() {
-        return Team;
+    to(route) {
+        this.route = route;
+
+        return this;
+    }
+
+    call(headers = {}, parameters = {}) {
+        return this.http[this.httpMethod](this.route, parameters, headers);
     }
 }
 

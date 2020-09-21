@@ -1,7 +1,7 @@
 import {
-    FETCH_TEAMMATES_REQUEST,
-    FETCH_TEAMMATES_FAILURE,
-    FETCH_TEAMMATES_SUCCESS
+    FETCH_MUSCLES_FAILURE,
+    FETCH_MUSCLES_REQUEST,
+    FETCH_MUSCLES_SUCCESS
 } from './constants';
 
 const initialState = {
@@ -13,26 +13,26 @@ const initialState = {
     rowsPerPageOptions: [10, 25, 100]
 };
 
-const teammatesReducer = (state, action) => {
+const musclesReducer = (state, action) => {
 
     if (state === undefined) {
         return initialState;
     }
 
     switch (action.type) {
-        case FETCH_TEAMMATES_REQUEST:
+        case FETCH_MUSCLES_REQUEST:
             return {
                 ...state,
                 loading: true,
                 error: null,
             };
-        case FETCH_TEAMMATES_SUCCESS:
+        case FETCH_MUSCLES_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 data: action.payload,
             };
-        case FETCH_TEAMMATES_FAILURE:
+        case FETCH_MUSCLES_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -43,4 +43,4 @@ const teammatesReducer = (state, action) => {
     }
 };
 
-export default teammatesReducer;
+export default musclesReducer;

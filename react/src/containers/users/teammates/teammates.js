@@ -6,34 +6,34 @@ import withReducer from "../../../utils/injectors/injectReducer";
 import withSaga from "../../../utils/injectors/injectSaga";
 import reducer from "./reducer";
 import saga from "./saga";
-import { fetchMuscles } from "./actions";
-import { ROUTES } from "../../../routes/spa";
-import { RenderRoutes } from "../../../utils/routes/render-routes";
+import { fetchTeammates } from "./actions";
+import {RenderRoutes} from "../../../utils/routes/render-routes";
+import {ROUTES} from "../../../routes/spa";
 
-const MusclesContainer = (props) => {
+const TeammatesContainer = (props) => {
 
-    return <RenderRoutes routes={ROUTES["muscles"]} props={props}/>;
+    return <RenderRoutes routes={ROUTES["teammates"]} props={props}/>;
 };
 
-const mapStateToProps = ({ muscles }) => {
-    return muscles;
+const mapStateToProps = ({ teammates }) => {
+    return teammates;
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchMuscles: () => dispatch(fetchMuscles()),
+        fetchTeammates: () => dispatch(fetchTeammates()),
         onChangePage: f => f,
         onChangeRowsPerPage: f => f,
     };
 };
 
-const key = 'muscles';
+const key = 'teammates';
 
 export default compose(
     withReducer({ key, reducer }),
     withSaga({ key, saga }),
     withManagerService(),
     connect(mapStateToProps, mapDispatchToProps),
-)(MusclesContainer);
+)(TeammatesContainer);
 
 

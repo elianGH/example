@@ -1,6 +1,6 @@
-import {put, takeLatest, call, getContext} from "@redux-saga/core/effects";
-import { useToken } from '../../utils/hooks';
-
+import {put, takeLatest, call, getContext, apply} from "@redux-saga/core/effects";
+import { useToken } from '../../../utils/hooks';
+import {ROUTES} from "../../../routes/api";
 import {
     FETCH_TEAMMATES_REQUEST,
     FETCH_TEAMMATES_FAILURE,
@@ -11,13 +11,11 @@ function* fetchTeammates(action) {
 
     const managerService = yield getContext('managerService');
 
-    console.log(managerService);
-
-    const { failure, data, errors } = yield call(
-        managerService.team().get,
-        {},
-        { Authorization: `Bearer ${action.payload.token}` }
-        // useToken(action.payload.token)
+    const { failure, data, errors } = yield apply(
+        managerService,
+        managerService.http("get").to(ROUTES["teammates"].crud).call,
+        []
+        // [useToken(action.payload.token)],
     );
 
     if(! failure) {

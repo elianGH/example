@@ -1,38 +1,36 @@
-import {put, takeLatest, call, getContext} from "@redux-saga/core/effects";
-import { useToken } from '../../utils/hooks';
-
+import {put, takeLatest, call, getContext, apply} from "@redux-saga/core/effects";
+import { useToken } from '../../../utils/hooks';
+import { ROUTES } from "../../../routes/api";
 import {
-    FETCH_TEAMMATES_REQUEST,
-    FETCH_TEAMMATES_FAILURE,
-    FETCH_TEAMMATES_SUCCESS
+    FETCH_MUSCLES_REQUEST,
+    FETCH_MUSCLES_SUCCESS,
+    FETCH_MUSCLES_FAILURE
 } from './constants';
 
-function* fetchTeammates(action) {
+function* fetchMuscles(action) {
 
     const managerService = yield getContext('managerService');
 
-    console.log(managerService);
-
-    const { failure, data, errors } = yield call(
-        managerService.team().get,
-        {},
-        { Authorization: `Bearer ${action.payload.token}` }
-        // useToken(action.payload.token)
+    const { failure, data, errors } = yield apply(
+        managerService,
+        managerService.http("get").to(ROUTES["muscles"].crud).call,
+        []
+        // [useToken(action.payload.token)],
     );
 
     if(! failure) {
         yield put({
-            type: FETCH_TEAMMATES_SUCCESS,
-            payload: data.teammates
+            type: FETCH_MUSCLES_SUCCESS,
+            payload: data.muscles
         });
     } else {
         yield put({
-            type: FETCH_TEAMMATES_FAILURE,
+            type: FETCH_MUSCLES_FAILURE,
             payload: errors
         });
     }
 }
 
-export default function* teammates() {
-    yield takeLatest(FETCH_TEAMMATES_REQUEST, fetchTeammates);
+export default function* muscles() {
+    yield takeLatest(FETCH_MUSCLES_REQUEST, fetchMuscles);
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { RenderRoutes } from "../../utils/routes/render-routes";
-import { ROUTES } from "../../routes";
-import { withManagerService } from "../../components/hoc";
+import { ROUTES } from "../../routes/spa";
+import { withManagerService } from "../../components/hocs";
 import { compose } from "../../utils/compose";
 import { useStyles } from "./styles";
 import AppBar from "../../components/app-bar";
@@ -16,6 +16,7 @@ const AppContainer = ({ openDrawer, toggleDrawer }) => {
     const classes = useStyles();
     const key = 'app';
     useReducer({ key, reducer });
+    console.log(ROUTES);
 
     return (
         <div className={classes.root}>
@@ -23,7 +24,7 @@ const AppContainer = ({ openDrawer, toggleDrawer }) => {
             <AppBar openDrawer={openDrawer} toggleDrawer={toggleDrawer}/>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                <RenderRoutes routes={ROUTES} />
+                <RenderRoutes routes={ROUTES["app"]} />
             </main>
         </div>
     );

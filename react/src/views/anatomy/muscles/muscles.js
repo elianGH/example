@@ -1,10 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import Table from "../../../components/table";
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import NavigateNextIcon from "@material-ui/icons/NavigateNext"
-import Link from '@material-ui/core/Link';
-import { NavLink } from "react-router-dom";
+import { columns } from "../../../containers/anatomy/muscles/config/columns";
 import { TableSkeleton, TitleSkeleton } from "../../../components/loaders/skeletons";
 
 const Muscles = (props) => {
@@ -15,29 +12,6 @@ const Muscles = (props) => {
     useEffect(() => {
         fetchMuscles(page, perPage);
     }, [page, perPage]);
-
-    const columns = [
-        {
-            id: "id",
-            label: "ID",
-            align: "left"
-        },
-        {
-            id: "name",
-            label: "Name",
-            align: 'left',
-        },
-        {
-            id: "email",
-            label: "Email",
-            align: "left",
-        },
-        {
-            id: "phone",
-            label: "Phone",
-            align: "left",
-        }
-    ];
 
     if(loading) {
         return (
@@ -50,12 +24,7 @@ const Muscles = (props) => {
 
     return (
         <Fragment>
-            <Breadcrumbs style={{ marginBottom: 15, }}  separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
-                <Link color="inherit" to="/" component={NavLink}>
-                    Dashboard
-                </Link>
-                <Typography color="textPrimary">Teammates</Typography>
-            </Breadcrumbs>
+            <Typography color="textPrimary">Muscles</Typography>
             <Table
                 columns={columns}
                 rows={data}

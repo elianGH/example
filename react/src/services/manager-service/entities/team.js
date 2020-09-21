@@ -8,6 +8,10 @@ const routes = {
 
 class Team
 {
+    constructor({ method }) {
+        this.httpMethod = method;
+    }
+
     login(parameters, headers) {
         const http = new HttpService();
         return http.post(routes.login, parameters, headers);
@@ -19,4 +23,4 @@ class Team
     }
 }
 
-export default new Team();
+export default Team;

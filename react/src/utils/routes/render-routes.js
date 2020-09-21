@@ -1,28 +1,20 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-const RouteWithSubRoutes = (route) => {
-    return (
-        <Route
-            path={route.path}
-            render={props => (
-                <route.component {...props} routes={route.routes} />
-            )}
-        />
-    );
-};
-
-const RenderRoutes = ({ routes }) => {
+export const RenderRoutes = ({ routes, props }) => {
     return (
         <Switch>
             {routes.map((route, i) => {
-                return <RouteWithSubRoutes key={route.key} {...route} />;
+                return <Route
+                    key={route.key}
+                    path={route.path}
+                    exact={route.exact}
+                    render={routeProps => (
+                        <route.component {...routeProps} { ...props }/>
+                    )}
+                />;
             })}
             <Route component={() => <h1>Not Found!</h1>} />
         </Switch>
     );
-};
-
-export {
-    RenderRoutes
 };
